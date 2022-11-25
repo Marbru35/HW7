@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Client{
 	
-public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 
 		//Initialise some household
@@ -27,7 +27,19 @@ public static void main(String[] args) {
         List<HouseholdItem> namesList = Arrays.asList(microwaveOven,tv,wineGlass,coffeeTable,bed,cupboard );
         householdItmes.addAll(namesList);
 		
-  
-}
-
+     
+        // Output: moving cost for six household items
+        MovingCostCalculator movingCost = new MovingCostCalculator();
+        for (HouseholdItem item : householdItmes) {
+        	movingCost.calculateMovingCost(item);
+        }
+        
+        
+        // Output: packing instructiomns for six household items
+        PackingInstructionsCalculator packingInstructions = new PackingInstructionsCalculator();
+        for (HouseholdItem item : householdItmes) {
+        	//item.accept(packingInstructions);
+        	packingInstructions.calculatePackingInstruction(item);
+        }
+	}
 }
