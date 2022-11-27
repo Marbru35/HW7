@@ -12,7 +12,6 @@ public class CompositeTeams implements OlympicsTeams {
 	
 	public CompositeTeams(String name) {
 		this.name = name;
-		//this.teams.addAll(Arrays.asList(olympicsTeams));
 	}
 	
 	public void add(OlympicsTeams team) {
