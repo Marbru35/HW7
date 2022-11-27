@@ -7,19 +7,19 @@ public class MovingCostCalculator implements Visitor {
 	@Override
 	public void visitGlass(Glass g) {
 		if (g.getTickness() == 1) {
-			tempCost = 2 * (double)g.getLenght();
+			tempCost = 2 * ((double)g.getLenght() / 100);
 		} else if (g.getTickness() == 2) {
-			tempCost = 1.2 * (double)g.getLenght();
+			tempCost = 1.2 * ((double)g.getLenght() / 100);
 		} else {
-			tempCost = 0.7 * (double)g.getLenght();
+			tempCost = 0.7 * ((double)g.getLenght() / 100);
 		}
-		System.out.println("Total cost for " + g.getName() + "is: " + tempCost + " Euros");
+		System.out.println("Total cost for " + g.getName() + " is: " + tempCost + " Euros");
 	}
 
 	@Override
 	public void visitFurniture(Furniture f) {
 		tempCost = ((double)f.getWeight() / 20) * 5;
-		System.out.println("Total cost for " + f.getName() + "is: " + tempCost + " Euros");
+		System.out.println("Total cost for " + f.getName() + " is: " + tempCost + " Euros");
 	}
 
 	@Override
@@ -29,7 +29,7 @@ public class MovingCostCalculator implements Visitor {
 		} else {
 			tempCost = ((double)e.getWeight() / 15) * 5;
 		}
-		System.out.println("Total cost for " + e.getName() + "is: " + tempCost + " Euros");
+		System.out.println("Total cost for " + e.getName() + " is: " + tempCost + " Euros");
 	}
 	
 	public Double calculateMovingCost(HouseholdItem h) {
